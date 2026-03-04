@@ -1,0 +1,92 @@
+index-Dd_ik5PT.js:16 useDownloadReel: Starting mutation for URL: https://www.instagram.com/reel/DVQ8vy6iIz-/?igsh=aG15aHJjc3Mzczdq
+index-Dd_ik5PT.js:16 useDownloadReel: Sending POST to /api/reels/download
+index-Dd_ik5PT.js:16  POST https://allreeldownloader.netlify.app/api/reels/download 502 (Bad Gateway)
+mutationFn @ index-Dd_ik5PT.js:16
+fn @ index-Dd_ik5PT.js:8
+E @ index-Dd_ik5PT.js:8
+start @ index-Dd_ik5PT.js:8
+execute @ index-Dd_ik5PT.js:8
+await in execute
+mutate @ index-Dd_ik5PT.js:8
+(anonymous) @ index-Dd_ik5PT.js:8
+h @ index-Dd_ik5PT.js:16
+Vx @ index-Dd_ik5PT.js:5
+zx @ index-Dd_ik5PT.js:5
+Bx @ index-Dd_ik5PT.js:5
+ph @ index-Dd_ik5PT.js:5
+mh @ index-Dd_ik5PT.js:5
+(anonymous) @ index-Dd_ik5PT.js:5
+Vu @ index-Dd_ik5PT.js:8
+Sf @ index-Dd_ik5PT.js:5
+Vl @ index-Dd_ik5PT.js:5
+wl @ index-Dd_ik5PT.js:5
+rw @ index-Dd_ik5PT.js:5
+index-Dd_ik5PT.js:16 useDownloadReel: Response status: 502
+index-Dd_ik5PT.js:16 useDownloadReel: Failed to parse error response JSON
+mutationFn @ index-Dd_ik5PT.js:16
+await in mutationFn
+fn @ index-Dd_ik5PT.js:8
+E @ index-Dd_ik5PT.js:8
+start @ index-Dd_ik5PT.js:8
+execute @ index-Dd_ik5PT.js:8
+await in execute
+mutate @ index-Dd_ik5PT.js:8
+(anonymous) @ index-Dd_ik5PT.js:8
+h @ index-Dd_ik5PT.js:16
+Vx @ index-Dd_ik5PT.js:5
+zx @ index-Dd_ik5PT.js:5
+Bx @ index-Dd_ik5PT.js:5
+ph @ index-Dd_ik5PT.js:5
+mh @ index-Dd_ik5PT.js:5
+(anonymous) @ index-Dd_ik5PT.js:5
+Vu @ index-Dd_ik5PT.js:8
+Sf @ index-Dd_ik5PT.js:5
+Vl @ index-Dd_ik5PT.js:5
+wl @ index-Dd_ik5PT.js:5
+rw @ index-Dd_ik5PT.js:5
+index-Dd_ik5PT.js:16 useDownloadReel: Starting mutation for URL: https://www.instagram.com/reel/DVQ8vy6iIz-/?igsh=aG15aHJjc3Mzczdq
+index-Dd_ik5PT.js:16 useDownloadReel: Sending POST to /api/reels/download
+index-Dd_ik5PT.js:16  POST https://allreeldownloader.netlify.app/api/reels/download 502 (Bad Gateway)
+mutationFn @ index-Dd_ik5PT.js:16
+fn @ index-Dd_ik5PT.js:8
+E @ index-Dd_ik5PT.js:8
+start @ index-Dd_ik5PT.js:8
+execute @ index-Dd_ik5PT.js:8
+await in execute
+mutate @ index-Dd_ik5PT.js:8
+(anonymous) @ index-Dd_ik5PT.js:8
+h @ index-Dd_ik5PT.js:16
+Vx @ index-Dd_ik5PT.js:5
+zx @ index-Dd_ik5PT.js:5
+Bx @ index-Dd_ik5PT.js:5
+ph @ index-Dd_ik5PT.js:5
+mh @ index-Dd_ik5PT.js:5
+(anonymous) @ index-Dd_ik5PT.js:5
+Vu @ index-Dd_ik5PT.js:8
+Sf @ index-Dd_ik5PT.js:5
+Vl @ index-Dd_ik5PT.js:5
+wl @ index-Dd_ik5PT.js:5
+rw @ index-Dd_ik5PT.js:5
+index-Dd_ik5PT.js:16 useDownloadReel: Response status: 502
+index-Dd_ik5PT.js:16 useDownloadReel: Failed to parse error response JSON
+mutationFn @ index-Dd_ik5PT.js:16
+await in mutationFn
+fn @ index-Dd_ik5PT.js:8
+E @ index-Dd_ik5PT.js:8
+start @ index-Dd_ik5PT.js:8
+execute @ index-Dd_ik5PT.js:8
+await in execute
+mutate @ index-Dd_ik5PT.js:8
+(anonymous) @ index-Dd_ik5PT.js:8
+h @ index-Dd_ik5PT.js:16
+Vx @ index-Dd_ik5PT.js:5
+zx @ index-Dd_ik5PT.js:5
+Bx @ index-Dd_ik5PT.js:5
+ph @ index-Dd_ik5PT.js:5
+mh @ index-Dd_ik5PT.js:5
+(anonymous) @ index-Dd_ik5PT.js:5
+Vu @ index-Dd_ik5PT.js:8
+Sf @ index-Dd_ik5PT.js:5
+Vl @ index-Dd_ik5PT.js:5
+wl @ index-Dd_ik5PT.js:5
+rw @ index-Dd_ik5PT.js:5

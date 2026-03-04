@@ -11,7 +11,7 @@ export function useDownloadReel() {
 
       // 2. API Request
       console.log("useDownloadReel: Sending POST to", api.reels.download.path);
-      const res = await fetch(api.reels.download.path, {
+      const res = await fetch(window.location.origin + api.reels.download.path, {
         method: api.reels.download.method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validated),
