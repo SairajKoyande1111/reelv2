@@ -3,6 +3,7 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import instagramGetUrl from 'instagram-url-direct';
 
 export async function registerRoutes(
   httpServer: Server,
@@ -13,9 +14,17 @@ export async function registerRoutes(
     try {
       const input = api.reels.download.input.parse(req.body);
       
-      // In a real application, you would use an Instagram downloader service or API here.
-      // For this MVP, we will mock a successful response.
-      const mockVideoUrl = "https://www.w3schools.com/html/mov_bbb.mp4"; 
+      console.log(`Processing Reel URL: ${input.url}`);
+      const result = await instagramGetUrl(input.url);
+      
+      if (!result || !result.url_list || result.url_list.length === 0) {
+        return res.status(400).json({ 
+          success: false, 
+          message: "Could not find a downloadable video for this URL. Please ensure the account is public." 
+        });
+      }
+
+      const videoUrl = result.url_list[0];
       
       // Save the download attempt to the database
       await storage.createDownload({
@@ -25,7 +34,7 @@ export async function registerRoutes(
 
       res.status(200).json({
         success: true,
-        videoUrl: mockVideoUrl,
+        videoUrl: videoUrl,
         message: "Reel processed successfully"
       });
     } catch (err) {
@@ -37,7 +46,7 @@ export async function registerRoutes(
       }
       
       console.error("Error downloading reel:", err);
-      res.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error. Failed to fetch the Reel." });
     }
   });
 
