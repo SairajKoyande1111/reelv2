@@ -4,10 +4,19 @@ import { storage } from "./storage.js";
 import { api } from "../shared/routes.js";
 import { z } from "zod";
 import { Readable } from "stream";
-// @ts-ignore
-import instagramGetUrl from 'instagram-url-direct';
 
-const __filename_local = ""; // Dummy to avoid conflict if needed, but we should remove the global ones if they exist
+// Use dynamic import for ESM compatibility in bundled environments
+let instagramGetUrl: any;
+async function initDownloader() {
+  if (!instagramGetUrl) {
+    // @ts-ignore
+    const mod = await import('instagram-url-direct');
+    instagramGetUrl = mod.default || mod;
+  }
+  return instagramGetUrl;
+}
+
+const __filename_local = ""; 
 
 export async function registerRoutes(
   httpServer: Server,
@@ -56,14 +65,8 @@ export async function registerRoutes(
       
       console.log(`Processing Reel URL: ${input.url}`);
       
-      // Handle potential default export or commonjs mismatch
-      let getUrl = instagramGetUrl;
-      // @ts-ignore
-      if (getUrl && getUrl.default) {
-        // @ts-ignore
-        getUrl = getUrl.default;
-      }
-
+      let getUrl = await initDownloader();
+      
       console.log("getUrl type:", typeof getUrl);
 
       if (typeof getUrl !== 'function') {
