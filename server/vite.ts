@@ -5,8 +5,8 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import fs from "node:fs";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename_vite = fileURLToPath(import.meta.url);
+const __dirname_vite = path.dirname(__filename_vite);
 
 const viteLogger = createLogger();
 
@@ -42,7 +42,7 @@ export async function setupVite(server: Server, app: Express) {
 
     try {
       const clientTemplate = path.resolve(
-        __dirname,
+        __dirname_vite,
         "..",
         "client",
         "index.html",
