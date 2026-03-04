@@ -1,25 +1,36 @@
-import { db } from "./db.js";
 import {
-  downloads,
   type InsertDownload,
   type Download
 } from "../shared/schema.js";
-import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getDownloads(): Promise<Download[]>;
   createDownload(download: InsertDownload): Promise<Download>;
 }
 
-export class DatabaseStorage implements IStorage {
-  async getDownloads(): Promise<Download[]> {
-    return await db.select().from(downloads);
+export class MemStorage implements IStorage {
+  private downloads: Map<number, Download>;
+  private currentId: number;
+
+  constructor() {
+    this.downloads = new Map();
+    this.currentId = 1;
   }
 
-  async createDownload(download: InsertDownload): Promise<Download> {
-    const [created] = await db.insert(downloads).values(download).returning();
-    return created;
+  async getDownloads(): Promise<Download[]> {
+    return Array.from(this.downloads.values());
+  }
+
+  async createDownload(insertDownload: InsertDownload): Promise<Download> {
+    const id = this.currentId++;
+    const download: Download = {
+      ...insertDownload,
+      id,
+      createdAt: new Date()
+    };
+    this.downloads.set(id, download);
+    return download;
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = new MemStorage();
