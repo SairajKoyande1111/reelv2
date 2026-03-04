@@ -3,6 +3,7 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+// @ts-ignore
 import instagramGetUrl from 'instagram-url-direct';
 
 export async function registerRoutes(
@@ -15,7 +16,18 @@ export async function registerRoutes(
       const input = api.reels.download.input.parse(req.body);
       
       console.log(`Processing Reel URL: ${input.url}`);
-      const result = await instagramGetUrl(input.url);
+      
+      // Handle potential default export or commonjs mismatch
+      const getUrl = typeof instagramGetUrl === 'function' 
+        ? instagramGetUrl 
+        : (instagramGetUrl as any).default;
+
+      if (typeof getUrl !== 'function') {
+        console.error("instagram-url-direct is not a function:", instagramGetUrl);
+        throw new Error("Downloader library initialization failed");
+      }
+
+      const result = await getUrl(input.url);
       
       if (!result || !result.url_list || result.url_list.length === 0) {
         return res.status(400).json({ 
