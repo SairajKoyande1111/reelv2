@@ -4,7 +4,7 @@
 
 [functions]
   directory = "server"
-  external_node_modules = ["lightningcss", "@babel/core", "@babel/preset-typescript", "tsx", "esbuild", "pg", "drizzle-orm"]
+  external_node_modules = ["lightningcss", "@babel/core", "@babel/preset-typescript", "tsx", "esbuild"]
   node_bundler = "esbuild"
 
 [[redirects]]

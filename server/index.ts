@@ -1,4 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
+// Database URI mention removed as requested, using in-memory storage.
 import { registerRoutes } from "./routes.js";
 import { createServer } from "http";
 
