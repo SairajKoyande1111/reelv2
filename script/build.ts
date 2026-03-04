@@ -59,6 +59,7 @@ async function buildAll() {
     outfile: "dist/index.cjs",
     define: {
       "process.env.NODE_ENV": '"production"',
+      "process.env.NETLIFY": '"1"',
     },
     minify: true,
     external: externals,

@@ -7,6 +7,8 @@ import { Readable } from "stream";
 // @ts-ignore
 import instagramGetUrl from 'instagram-url-direct';
 
+const __filename_local = ""; // Dummy to avoid conflict if needed, but we should remove the global ones if they exist
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
