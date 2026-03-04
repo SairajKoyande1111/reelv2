@@ -56,12 +56,14 @@ export function Hero() {
                       onChange={(e) => setUrl(e.target.value)}
                       className="w-full pl-12 pr-4 py-4 md:py-5 bg-white/50 backdrop-blur-sm border-2 border-transparent focus:border-purple-300 focus:bg-white rounded-2xl outline-none transition-all text-foreground placeholder:text-muted-foreground text-lg"
                       required
+                      data-testid="input-reel-url"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isPending || !url}
                     className="flex items-center justify-center gap-2 px-8 py-4 md:py-5 bg-foreground text-white rounded-2xl font-semibold text-lg hover:bg-foreground/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg"
+                    data-testid="button-submit-url"
                   >
                     {isPending ? (
                       <>
@@ -90,10 +92,10 @@ export function Hero() {
                   
                   <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
                     <a 
-                      href={data.videoUrl || "#"} 
-                      target="_blank" 
-                      rel="noreferrer"
+                      href={`/api/proxy?url=${encodeURIComponent(data.videoUrl || "")}`}
+                      download="instagram-reel.mp4"
                       className="px-8 py-3 bg-gradient-primary text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+                      data-testid="link-save-video"
                     >
                       <Download className="w-5 h-5" />
                       Save Video
@@ -101,6 +103,7 @@ export function Hero() {
                     <button 
                       onClick={handleReset}
                       className="px-8 py-3 bg-muted text-foreground rounded-xl font-semibold hover:bg-gray-200 transition-colors"
+                      data-testid="button-download-another"
                     >
                       Download Another
                     </button>
