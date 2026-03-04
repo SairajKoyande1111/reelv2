@@ -14,12 +14,19 @@ async function initDownloader() {
     console.log("Attempting to import instagram-url-direct...");
     // @ts-ignore
     const mod = await import('instagram-url-direct');
-    instagramGetUrl = mod.default || mod;
-    console.log("Import successful, type:", typeof instagramGetUrl);
+    const instagramGetUrlRaw = mod.default || mod;
+    console.log("Import successful, type:", typeof instagramGetUrlRaw);
     
     // Handle different export patterns
-    if (typeof instagramGetUrl !== 'function' && instagramGetUrl && typeof instagramGetUrl.instagramGetUrl === 'function') {
-      instagramGetUrl = instagramGetUrl.instagramGetUrl;
+    if (typeof instagramGetUrlRaw === 'function') {
+      instagramGetUrl = instagramGetUrlRaw;
+    } else if (instagramGetUrlRaw && typeof instagramGetUrlRaw.instagramGetUrl === 'function') {
+      instagramGetUrl = instagramGetUrlRaw.instagramGetUrl;
+    } else if (instagramGetUrlRaw && typeof instagramGetUrlRaw.default === 'function') {
+      instagramGetUrl = instagramGetUrlRaw.default;
+    } else {
+      console.error("Could not find downloader function in module:", instagramGetUrlRaw);
+      throw new Error("Downloader function not found");
     }
     
     return instagramGetUrl;
@@ -92,19 +99,27 @@ export async function registerRoutes(
         throw new Error(`Library error: ${e.message || e}`);
       });
       
-      if (!result || !result.url_list || result.url_list.length === 0) {
+      console.log("Downloader result:", JSON.stringify(result));
+
+      if (!result || (!result.url_list && !result.results)) {
         return res.status(400).json({ 
           success: false, 
           message: "Could not find a downloadable video for this URL. Please ensure the account is public." 
         });
       }
 
-      // Try to find the highest quality video URL if multiple are provided
-      // Often the library returns a list where we can try to pick the best one
-      // For now, we'll stick with the first one but log if there are others
-      const videoUrl = result.url_list[0];
+      // Handle different result formats from the library
+      const urlList = result.url_list || result.results || [];
+      if (urlList.length === 0) {
+        return res.status(400).json({ 
+          success: false, 
+          message: "No video URLs found in the response." 
+        });
+      }
+
+      const videoUrl = typeof urlList[0] === 'string' ? urlList[0] : urlList[0].url;
       
-      console.log(`Found ${result.url_list.length} video URLs. Using the first one.`);
+      console.log(`Found ${urlList.length} video URLs. Using: ${videoUrl}`);
       
       // Save the download attempt to the database
       await storage.createDownload({
