@@ -1,4 +1,5 @@
 import serverless from "serverless-http";
-import app from "./index.js";
+// @ts-ignore
+import app from "./index.cjs";
 
 export const handler = serverless(app);

@@ -1,0 +1,150 @@
+10:51:00 PM: build-image version: 8c9b1115cf47daa4d19510cfee34034469213d7a (noble-new-builds)
+10:51:00 PM: buildbot version: b37d60600e9fbd0a1bcdda16d43f1897be4759fc
+10:51:00 PM: Building with cache
+10:51:00 PM: Starting to prepare the repo for build
+10:51:00 PM: Preparing Git Reference refs/heads/main
+10:51:02 PM: Installing dependencies
+10:51:02 PM: mise ~/.config/mise/config.toml tools: python@3.14.3
+10:51:02 PM: mise ~/.config/mise/config.toml tools: ruby@3.4.8
+10:51:02 PM: mise ~/.config/mise/config.toml tools: go@1.26.0
+10:51:02 PM: v22.22.0 is already installed.
+10:51:03 PM: Now using node v22.22.0 (npm v10.9.4)
+10:51:03 PM: Enabling Node.js Corepack
+10:51:03 PM: No npm workspaces detected
+10:51:03 PM: Installing npm packages using npm version 10.9.4
+10:51:04 PM: up to date in 802ms
+10:51:04 PM: npm packages installed
+10:51:04 PM: Successfully installed dependencies
+10:51:04 PM: Detected 1 framework(s)
+10:51:04 PM: "vite" at version "7.3.1"
+10:51:04 PM: Starting build script
+10:51:05 PM: Section completed: initializing
+10:51:07 PM: ​
+10:51:07 PM: Netlify Build                                                 
+10:51:07 PM: ────────────────────────────────────────────────────────────────
+10:51:07 PM: ​
+10:51:07 PM: ❯ Version
+10:51:07 PM:   @netlify/build 35.8.4
+10:51:07 PM: ​
+10:51:07 PM: ❯ Flags
+10:51:07 PM:   accountId: 6926d61cc732b414194f7d3a
+10:51:07 PM:   baseRelDir: true
+10:51:07 PM:   buildId: 69a869fb1ed7b40008ba4c9c
+10:51:07 PM:   deployId: 69a869fb1ed7b40008ba4c9e
+10:51:07 PM: ​
+10:51:07 PM: ❯ Current directory
+10:51:07 PM:   /opt/build/repo
+10:51:07 PM: ​
+10:51:07 PM: ❯ Config file
+10:51:07 PM:   /opt/build/repo/netlify.toml
+10:51:07 PM: ​
+10:51:07 PM: ❯ Context
+10:51:07 PM:   production
+10:51:07 PM: ​
+10:51:07 PM: build.command from netlify.toml                               
+10:51:07 PM: ────────────────────────────────────────────────────────────────
+10:51:07 PM: ​
+10:51:07 PM: $ npm run build
+10:51:08 PM: > rest-express@1.0.0 build
+10:51:08 PM: > npx tsx script/build.ts
+10:51:09 PM: building client...
+10:51:09 PM: vite v7.3.1 building client environment for production...
+10:51:10 PM: transforming...
+10:51:12 PM: ✓ 2031 modules transformed.
+10:51:13 PM: rendering chunks...
+10:51:13 PM: computing gzip size...
+10:51:13 PM: ../dist/public/index.html                                         2.18 kB │ gzip:   0.84 kB
+10:51:13 PM: ../dist/public/assets/lightning_1772635445711-nXhH9Npq.png       11.27 kB
+10:51:13 PM: ../dist/public/assets/video_1772635646433-BBo_F7yQ.png           11.49 kB
+10:51:13 PM: ../dist/public/assets/insurance_1772635570218-BGOQjyf9.png       14.79 kB
+10:51:13 PM: ../dist/public/assets/facebook_(1)_1772634020519-ejnf6rkB.png    16.04 kB
+10:51:13 PM: ../dist/public/assets/twitter_1772634025574-DTBoECSh.png         17.45 kB
+10:51:13 PM: ../dist/public/assets/prohibition_1772635526816-N3I5Ei0O.png     20.68 kB
+10:51:13 PM: ../dist/public/assets/instagram_(1)_1772634012258-Dbq-n8qV.png   52.99 kB
+10:51:13 PM: ../dist/public/assets/index-nFPEQc4t.css                         93.92 kB │ gzip:  14.47 kB
+10:51:13 PM: ../dist/public/assets/index-1Sw-XYuy.js                         456.81 kB │ gzip: 143.12 kB
+10:51:13 PM: ✓ built in 3.73s
+10:51:13 PM: building server...
+10:51:13 PM:   dist/index.cjs  1.0mb ⚠️
+10:51:13 PM: ⚡ Done in 163ms
+10:51:13 PM: ​
+10:51:13 PM: (build.command completed in 5.8s)
+10:51:13 PM: ​
+10:51:13 PM: Functions bundling                                            
+10:51:13 PM: ────────────────────────────────────────────────────────────────
+10:51:13 PM: ​
+10:51:13 PM: Packaging Functions from server directory:
+10:51:13 PM:  - db.ts
+10:51:13 PM:  - index.js
+10:51:13 PM:  - netlify.ts
+10:51:13 PM:  - routes.ts
+10:51:13 PM:  - static.ts
+10:51:13 PM:  - storage.ts
+10:51:13 PM:  - vite.ts
+10:51:13 PM: ​
+10:51:14 PM: ▲ [WARNING] The CommonJS "module" variable is treated as a global variable in an ECMAScript module and may not work as expected [commonjs-variable-in-esm]
+10:51:14 PM:     server/index.js:68:27542:
+10:51:14 PM:       68 │ ...{default:()=>BP,log:()=>mw});module.exports=ww($P);var Ks=Or(xu...
+10:51:14 PM:          ╵                                 ~~~~~~
+10:51:14 PM:   This file is considered to be an ECMAScript module because the enclosing "package.json" file sets the type of this file to "module":
+10:51:14 PM:     package.json:4:10:
+10:51:14 PM:       4 │   "type": "module",
+10:51:14 PM:         ╵           ~~~~~~~~
+10:51:14 PM:   Node's package format requires that CommonJS files in a "type": "module" package use the ".cjs" file extension.
+10:51:14 PM: ▲ [WARNING] The CommonJS "module" variable is treated as a global variable in an ECMAScript module and may not work as expected [commonjs-variable-in-esm]
+10:51:14 PM:     server/index.js:68:27542:
+10:51:14 PM:       68 │ ...{default:()=>BP,log:()=>mw});module.exports=ww($P);var Ks=Or(xu...
+10:51:14 PM:          ╵                                 ~~~~~~
+10:51:14 PM:   This file is considered to be an ECMAScript module because the enclosing "package.json" file sets the type of this file to "module":
+10:51:14 PM:     package.json:4:10:
+10:51:14 PM:       4 │   "type": "module",
+10:51:14 PM:         ╵           ~~~~~~~~
+10:51:14 PM:   Node's package format requires that CommonJS files in a "type": "module" package use the ".cjs" file extension.
+10:51:14 PM: ✘ [ERROR] No matching export in "server/index.js" for import "default"
+10:51:14 PM:     server/netlify.ts:2:7:
+10:51:14 PM:       2 │ import app from "./index.js";
+10:51:14 PM:         ╵        ~~~
+10:51:15 PM: ​
+10:51:15 PM: Bundling of function "netlify" failed                         
+10:51:15 PM: ────────────────────────────────────────────────────────────────
+10:51:15 PM: ​
+10:51:15 PM:   Error message
+10:51:15 PM:   Build failed with 1 error:
+10:51:15 PM:   server/netlify.ts:2:7: ERROR: No matching export in "server/index.js" for import "default"
+10:51:15 PM: ​
+10:51:15 PM:   Error location
+10:51:15 PM:   While bundling function "netlify"
+10:51:15 PM: ​
+10:51:15 PM:   Resolved config
+10:51:15 PM:   build:
+10:51:15 PM:     command: npm run build
+10:51:15 PM:     commandOrigin: config
+10:51:15 PM:     publish: /opt/build/repo/dist/public
+10:51:15 PM:     publishOrigin: config
+10:51:15 PM:   functions:
+10:51:15 PM:     "*":
+10:51:15 PM:       external_node_modules:
+10:51:15 PM:         - lightningcss
+10:51:15 PM:         - "@babel/core"
+10:51:15 PM:         - "@babel/preset-typescript"
+10:51:15 PM:         - tsx
+10:51:15 PM:         - esbuild
+10:51:15 PM:         - instagram-url-direct
+10:51:15 PM:         - pg
+10:51:15 PM:         - drizzle-orm
+10:51:15 PM:       included_files:
+10:51:22 PM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+10:51:22 PM:         - node_modules/instagram-url-direct/**
+      node_bundler: esbuild
+  functionsDirectory: /opt/build/repo/server
+  redirects:
+    - from: /api/*
+      status: 200
+      to: /.netlify/functions/index/:splat
+    - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+10:51:22 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+10:51:22 PM: Failing build: Failed to build site
+10:51:23 PM: Finished processing build request in 22.81s

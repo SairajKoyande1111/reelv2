@@ -10,7 +10,7 @@
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "vercel-build": "npm run build && cp dist/index.cjs server/index.js && cp -r dist/public/* public/",
-    "netlify-build": "npm run build && cp dist/index.cjs server/index.js"
+    "netlify-build": "npm run build && cp dist/index.cjs server/index.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
