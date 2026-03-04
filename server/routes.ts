@@ -67,7 +67,7 @@ export async function registerRoutes(
         throw new Error("Downloader library initialization failed");
       }
 
-      const result = await getUrl(input.url);
+      const result = await (getUrl as any)(input.url);
       
       if (!result || !result.url_list || result.url_list.length === 0) {
         return res.status(400).json({ 
