@@ -78,7 +78,8 @@ export async function registerRoutes(
       }
 
       const result = await (getUrl as any)(input.url).catch((e: any) => {
-        console.error("Library call failed:", e);
+        console.error("Library call failed. Full error:", e);
+        if (e.stack) console.error("Stack trace:", e.stack);
         throw new Error(`Library error: ${e.message || e}`);
       });
       

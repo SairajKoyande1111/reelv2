@@ -4,7 +4,9 @@
 
 [functions]
   directory = "server"
-  external_node_modules = ["lightningcss", "@babel/core", "@babel/preset-typescript", "tsx", "esbuild", "instagram-url-direct", "pg"]
+  external_node_modules = ["lightningcss", "@babel/core", "@babel/preset-typescript", "tsx", "esbuild", "instagram-url-direct", "pg", "drizzle-orm"]
+  node_bundler = "esbuild"
+  included_files = ["node_modules/instagram-url-direct/**"]
 
 [[redirects]]
   from = "/api/*"
