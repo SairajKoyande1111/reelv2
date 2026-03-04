@@ -1,0 +1,46 @@
+index-1Sw-XYuy.js:16 useDownloadReel: Starting mutation for URL: https://www.instagram.com/reel/DVQ8vy6iIz-/?igsh=aG15aHJjc3Mzczdq
+index-1Sw-XYuy.js:16 useDownloadReel: Sending POST to /api/reels/download
+index-1Sw-XYuy.js:16  POST https://allreeldownloader.netlify.app/api/reels/download 502 (Bad Gateway)
+mutationFn @ index-1Sw-XYuy.js:16
+fn @ index-1Sw-XYuy.js:8
+E @ index-1Sw-XYuy.js:8
+start @ index-1Sw-XYuy.js:8
+execute @ index-1Sw-XYuy.js:8
+await in execute
+mutate @ index-1Sw-XYuy.js:8
+(anonymous) @ index-1Sw-XYuy.js:8
+h @ index-1Sw-XYuy.js:16
+Jx @ index-1Sw-XYuy.js:5
+tw @ index-1Sw-XYuy.js:5
+nw @ index-1Sw-XYuy.js:5
+Dh @ index-1Sw-XYuy.js:5
+Lh @ index-1Sw-XYuy.js:5
+(anonymous) @ index-1Sw-XYuy.js:5
+uc @ index-1Sw-XYuy.js:8
+Uf @ index-1Sw-XYuy.js:5
+uu @ index-1Sw-XYuy.js:5
+Hl @ index-1Sw-XYuy.js:5
+vw @ index-1Sw-XYuy.js:5
+index-1Sw-XYuy.js:16 useDownloadReel: Response status: 502
+index-1Sw-XYuy.js:16 useDownloadReel: Error response data: {errorType: 'Error', errorMessage: 'Cannot find module @rollup/rollup-linux-x64-gnu. n…oth package-lock.json and node_modules directory.', trace: Array(11)}errorMessage: "Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory."errorType: "Error"trace: Array(11)0: "Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory."1: "    at requireWithFriendlyError (/var/task/node_modules/rollup/dist/native.js:83:9)"2: "    at Object.<anonymous> (/var/task/node_modules/rollup/dist/native.js:92:76)"3: "    at Module._compile (node:internal/modules/cjs/loader:1706:14)"4: "    at Object..js (node:internal/modules/cjs/loader:1839:10)"5: "    at Module.load (node:internal/modules/cjs/loader:1441:32)"6: "    at Function._load (node:internal/modules/cjs/loader:1263:12)"7: "    at TracingChannel.traceSync (node:diagnostics_channel:328:14)"8: "    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)"9: "    at cjsLoader (node:internal/modules/esm/translators:309:5)"10: "    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:202:7)"length: 11[[Prototype]]: Array(0)[[Prototype]]: Object
+mutationFn @ index-1Sw-XYuy.js:16
+await in mutationFn
+fn @ index-1Sw-XYuy.js:8
+E @ index-1Sw-XYuy.js:8
+start @ index-1Sw-XYuy.js:8
+execute @ index-1Sw-XYuy.js:8
+await in execute
+mutate @ index-1Sw-XYuy.js:8
+(anonymous) @ index-1Sw-XYuy.js:8
+h @ index-1Sw-XYuy.js:16
+Jx @ index-1Sw-XYuy.js:5
+tw @ index-1Sw-XYuy.js:5
+nw @ index-1Sw-XYuy.js:5
+Dh @ index-1Sw-XYuy.js:5
+Lh @ index-1Sw-XYuy.js:5
+(anonymous) @ index-1Sw-XYuy.js:5
+uc @ index-1Sw-XYuy.js:8
+Uf @ index-1Sw-XYuy.js:5
+uu @ index-1Sw-XYuy.js:5
+Hl @ index-1Sw-XYuy.js:5
+vw @ index-1Sw-XYuy.js:5
